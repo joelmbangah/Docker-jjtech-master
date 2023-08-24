@@ -69,12 +69,9 @@ WORKDIR /opt
 COPY app.py /opt/app.py
 ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0 --port=8080
 
-
 docker build -t <image-name:1.0 > .
 
 docker run --name <container name> -d -p 8000:8080 <image-name:tag>
-
-
 
 ###################################
 ## Docker volume
@@ -87,11 +84,6 @@ docker run --name website -v c:/Users/Anselme/Documents/Demos/docker/website:/us
 
 docker run -d -p 9000:80 -v c:/Users/Anselme/Documents/Demos/docker/website:/usr/share/nginx/html -v c:/Users/Anselme/Documents/Demos/docker/logs:/var/log/nginx --name nginx-with-my-content nginx
 
-
 docker exec <cont-ID> -- cat /etc/*release*
 
-docker exec -it nginx bash 
-
-
-
-
+docker exec -it nginx bash
